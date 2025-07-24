@@ -1,0 +1,79 @@
+/* Main window */
+window {
+    margin: 5px;
+    border: 1px solid #cdd6f4; /* foreground (text) */
+    background-color: #1e1e2e; /* background (base) */
+    border-radius: 12px;
+    font-family: JetBrains Mono; /* or monospace if not installed */
+    font-size: 24px;
+}
+
+/* Input bar (inputbar) */
+#input {
+    margin: 5px 10px;
+    padding: 1px 8px;
+    border: 1px solid #cdd6f4; /* separatorcolor (foreground) */
+    background-color: #1e1e2e; /* background (base) */
+    color: #cdd6f4; /* normal-foreground (text) */
+    border-radius: 8px;
+}
+
+/* Normal entries (element normal.normal) */
+#entry {
+    padding: 1px 8px;
+    margin: 2px 10px;
+    background-color: #1e1e2e; /* normal-background (base) */
+    color: #cdd6f4; /* normal-foreground (text) */
+}
+
+/* Selected entry (element selected.normal) */
+#entry:selected {
+    background-color: #cdd6f4; /* selected-normal-background (lightfg) */
+    color: #181825; /* selected-normal-foreground (lightbg) */
+    border-radius: 8px;
+}
+
+/* Urgent entries (element normal.urgent) */
+#entry.urgent {
+    background-color: #1e1e2e; /* urgent-background (base) */
+    color: #f38ba8; /* urgent-foreground (red) */
+}
+
+/* Selected urgent entries (element selected.urgent) */
+#entry:selected.urgent {
+    background-color: #f38ba8; /* selected-urgent-background (red) */
+    color: #1e1e2e; /* selected-urgent-foreground (background) */
+}
+
+/* Active entries (element normal.active) */
+#entry.active {
+    background-color: #1e1e2e; /* active-background (base) */
+    color: #89b4fa; /* active-foreground (blue) */
+}
+
+/* Selected active entries (element selected.active) */
+#entry:selected.active {
+    background-color: #89b4fa; /* selected-active-background (blue) */
+    color: #1e1e2e; /* selected-active-foreground (background) */
+}
+
+/* Scrollable content area (listview) */
+#scroll {
+    margin: 2px 10px;
+}
+
+/* Text in entries (element-text) */
+#text {
+    background-color: transparent;
+    color: inherit;
+}
+
+/* Selected text (element-text in selected state) */
+#text:selected {
+    color: inherit;
+}
+
+/* Highlighted text in search results */
+#text:selected:highlighted {
+    color: #fab387; /* peach for accent */
+}

@@ -1,0 +1,129 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "spacing": 5,
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode"
+  ],
+  "modules-center": [
+    "sway/window"
+  ],
+  "modules-right": [
+    // "battery",
+    // "network",
+    // "memory",
+    // "cpu",
+    "wireplumber",
+    "tray",
+    "clock#date",
+    "clock#time",
+    "custom/powermenu"
+  ],
+  "battery": {
+    "interval": 10,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    // Connected to AC
+    "format": " {icon} {capacity}%", // Icon: bolt
+    // Not connected to AC
+    "format-discharging": "{icon} {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip": true
+  },
+  "clock#time": {
+    "interval": 1,
+    "format": " {:%H:%M:%S}",
+    "tooltip": false
+  },
+  "clock#date": {
+    "interval": 10,
+    "format": " {:%e %b %Y}",
+    "tooltip-format": "{:%e %B %Y}"
+  },
+  "cpu": {
+    "interval": 5,
+    "format": " {usage}% ({load})",
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
+  },
+  "memory": {
+    "interval": 5,
+    "format": "󰍛 {}%",
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
+  },
+  "network": {
+    "interval": 5,
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": "⚠ Disconnected",
+    "tooltip-format": "{ifname}: {ipaddr}",
+    "format": "󰈀 {ifname}"
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\"> {}</span>",
+    "tooltip": false
+  },
+  "sway/window": {
+    "all-outputs": true,
+    "format": "{}",
+    "max-length": 120
+  },
+  "sway/workspaces": {
+    "all-outputs": true,
+    "disable-scroll": true,
+    "format": "{icon} {name}",
+    "format-icons": {
+      "1:term": "",
+      "2:www": "",
+      "3:nvim": "",
+      "4:chat": "",
+      "5:misc": "",
+      "6:tv": "󰔂",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "1:term": [],
+      "2:www": [],
+      "3:nvim": [],
+      "4:chat": [],
+      "5:misc": []
+    }
+  },
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "Muted 󰝟",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "scroll-step": 5,
+    "on-click": "pavucontrol"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "custom/powermenu": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/power_menu.sh"
+  }
+}
