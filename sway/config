@@ -191,8 +191,11 @@ include /etc/sway/config.d/*
 assign [window_role="^browser$"] → workspace $workspace_www
 assign [class="discord"]         → workspace $workspace_chat
 
+for_window [title="Animated Window"] floating enable, opacity 0.5, focus, move absolute position 0 0, border none
+
 exec brave
 exec discord
 exec swaymsg "workspace $workspace_term; exec $term"
 exec swaymsg "workspace $workspace_nvim; exec $term -e tmux new-session -c nvim"
 exec swaymsg "workspace $workspace_www"
+
